@@ -1,64 +1,141 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello, World!</title>
-    <link rel="stylesheet" href="styles.css" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Player Project</title>
+    
     <style>
-      body{
-        background-color: rgb(204, 204, 204);
-        
-      }
-      
-      .player_one,.player_two{
-        background-color: rgb(255, 255, 255);
-        padding: 1px;
-        border-radius: 10px;
-        
-      }
-      
-      ul{
-        text-align: center;
-      }
-      h1,h2,h3{
-        text-align: center;
-      }
-      controls{
-        border: 1px solid black;
-      }
-	li{
-		list-style-type: none
-	}
-	a{
-		text-decoration-line: none
-	}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(204, 204, 204); /* As per requirement */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers content horizontally */
+            margin: 20px;
+            padding: 0;
+        }
+
+        /* Headings Styling */
+        .main-heading, /* for h1 */
+        .player-heading /* for h2 */ {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .main-heading {
+            font-size: 2.5em;
+        }
+
+        .player-heading {
+            font-size: 1.8em;
+        }
+
+        /* Songs Playlist Styling */
+        .playlist-section {
+            width: 80%;
+            max-width: 600px;
+            margin-bottom: 30px; /* Space below playlist */
+            background-color: rgb(255, 255, 255); /* White background */
+            padding: 20px;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .playlist-section h2 {
+            text-align: center; /* Centering the "Songs Playlist" heading */
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .playlist-section ul {
+            list-style-type: none; /* As per requirement */
+            padding: 0;
+            margin: 0;
+        }
+
+        .playlist-section li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .playlist-section li:last-child {
+            border-bottom: none; /* No border for the last item */
+        }
+
+        .playlist-section a {
+            text-decoration: none; /* As per requirement */
+            color: #007bff; /* A typical link color */
+            display: block; /* Make the whole list item clickable */
+        }
+
+        .playlist-section a:hover {
+            color: #0056b3; /* Darker blue on hover */
+        }
+
+
+        /* Video and Audio Player Container Styles */
+        .player_one,
+        .player_two {
+            background-color: rgb(255, 255, 255); /* As per requirement */
+            padding: 20px; /* As per requirement */
+            border-radius: 8px; /* As per requirement */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px; /* Space between players */
+            width: 80%;
+            max-width: 700px; /* Adjust max width for players */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        /* Specific Player Styles */
+        video, audio {
+            display: block; /* Ensures they take full width of container */
+            width: 100%;
+            margin-top: 15px; /* Space above the player controls */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .playlist-section,
+            .player_one,
+            .player_two {
+                width: 95%; /* Make sections a bit wider on smaller screens */
+                padding: 15px; /* Slightly less padding on smaller screens */
+            }
+        }
     </style>
-  </head>
-  
-  <body>
-      <h1>My Playlist</h1>
-	  <ul>
-        <li><a href="demo" target= "_blank">Song 1</a></li>
-        <li><a href="demo" target= "_blank">Song 2</a></li>
-        <li><a href="demo" target= "_blank">Song 3</a></li>
-        <li><a href="demo" target= "_blank">Song 4</a></li>
-        <li><a href="demo" target= "_blank">Song 5</a></li>
-      </ul>
-      <h2>Now Playing...</h2>
-	  <div class=player_one>
-		  <video controls>
-	        <source type="video/mp4" src="https://www.w3schools.com/tags/movie.mp4">
-		  </video>
-	  </div>
-      <h2>MP3 songs</h2>
-	  <div class=player_two>
-      <audio controls>
-        <source type="audio/mpeg" src="https://www.pagalworld.com.se/files/download/id/64630">
-      </audio>
-	  </div>
-      
-      
-      
-    
-    
-  </body>
+</head>
+<body>
+
+    <h1 class="main-heading">My Playlist</h1>
+
+    <div class="playlist-section">
+        <h2>Songs Playlist</h2>
+        <ul>
+            <li><a href="https://www.pagalworld.com.se/files/download/id/64630" target="_blank">Maan Meri Jaan (Audio)</a></li>
+            <li><a href="#" target="_blank">Song Title Two</a></li>
+            <li><a href="#" target="_blank">Song Title Three</a></li>
+            <li><a href="#" target="_blank">Song Title Four</a></li>
+            <li><a href="#" target="_blank">Song Title Five</a></li>
+        </ul>
+    </div>
+
+    <div class="player_one">
+        <h2 class="player-heading">Now Playing...</h2>
+        <video controls width="100%" height="auto">
+            <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="player_two">
+        <h2 class="player-heading">MP3 songs</h2>
+        <audio controls>
+            <source src="https://www.pagalworld.com.se/files/download/id/64630" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+</body>
 </html>
