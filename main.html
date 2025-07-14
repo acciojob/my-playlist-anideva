@@ -1,41 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Player Project</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <h1 class="main-heading">My Playlist</h1>
-
-    <div class="playlist-section">
-        <h2>Songs Playlist</h2>
-        <ul>
-            <li><a href="https://www.pagalworld.com.se/files/download/id/64630" target="_blank">Maan Meri Jaan (Audio)</a></li>
-            <li><a href="#" target="_blank">Song Title Two</a></li>
-            <li><a href="#" target="_blank">Song Title Three</a></li>
-            <li><a href="#" target="_blank">Song Title Four</a></li>
-            <li><a href="#" target="_blank">Song Title Five</a></li>
-        </ul>
-    </div>
-
-    <div class="player_one">
-        <h2 class="player-heading">Now Playing...</h2>
-        <video controls width="100%" height="auto">
-            <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <div class="player_two">
-        <h2 class="player-heading">MP3 songs</h2>
-        <audio controls>
-            <source src="https://www.pagalworld.com.se/files/download/id/64630" type="audio/mpeg">
-            Your browser does not support the audio tag.
-        </audio>
-    </div>
-
-</body>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body{
+        background-color: rgb(204, 204, 204);
+        
+      }
+      
+      .player_one,.player_two{
+        background-color: rgb(255, 255, 255);
+        padding: 1px;
+        border-radius: 10px;
+        
+      }
+      
+      ul{
+        text-align: center;
+      }
+      h1,h2,h3{
+        text-align: center;
+      }
+      controls{
+        border: 1px solid black;
+      }
+	li{
+		list-style-type: none
+	}
+	a{
+		text-decoration-line: none
+	}
+    </style>
+  </head>
+  
+  <body>
+      <h1>My Playlist</h1>
+	  <ul>
+        <li><a href="demo" target= "_blank">Song 1</a></li>
+        <li><a href="demo" target= "_blank">Song 2</a></li>
+        <li><a href="demo" target= "_blank">Song 3</a></li>
+        <li><a href="demo" target= "_blank">Song 4</a></li>
+        <li><a href="demo" target= "_blank">Song 5</a></li>
+      </ul>
+      <h2>Now Playing...</h2>
+	  <div class=player_one>
+		  <video controls>
+	        <source type="video/mp4" src="https://www.w3schools.com/tags/movie.mp4">
+		  </video>
+	  </div>
+      <h2>MP3 songs</h2>
+	  <div class=player_two>
+      <audio controls>
+        <source type="audio/mpeg" src="https://www.pagalworld.com.se/files/download/id/64630">
+      </audio>
+	  </div>
+      
+      
+      
+    
+    
+  </body>
 </html>
